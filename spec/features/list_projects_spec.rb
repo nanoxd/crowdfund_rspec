@@ -18,12 +18,17 @@ describe "Viewing the list of projects" do
                               pledging_ends_on: 1.month.from_now,
                               website: 'http://teamaker.com')
 
-    visit 'http://example.com/projects'
+    visit projects_url
 
     expect(page).to have_text("3 Projects")
-    expect(page).to have_text("Project A")
-    expect(page).to have_text("Project B")
-    expect(page).to have_text("Project C")
+    expect(page).to have_text(project1.name)
+    expect(page).to have_text(project2.name)
+    expect(page).to have_text(project3.name)
+
+    expect(page).to have_text(project1.description[0..10])
+    expect(page).to have_text("$100.00")
+    expect(page).to have_text(project1.website)
+    expect(page).to have_text(project1.pledging_ends_on)
   end
 
 end
