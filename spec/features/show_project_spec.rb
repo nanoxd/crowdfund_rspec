@@ -2,11 +2,7 @@ require "spec_helper"
 
 describe "Viewing an individual project" do
   it "shows the project's details" do
-    project = Project.create(name: "Start-Up Projectz",
-                              description: "A description of a start-up project",
-                              target_pledge_amount: 100.00,
-                              pledging_ends_on: 1.day.from_now,
-                              website: "http://project-ab.com")
+    project = Project.create(project_attributes)
 
     visit "http://example.com/projects/#{project.id}"
 
