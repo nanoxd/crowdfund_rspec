@@ -28,7 +28,6 @@ describe "Viewing the list of projects" do
     expect(page).to have_text(project1.description[0..10])
     expect(page).to have_text("$100.00")
     expect(page).to have_text(project1.website)
-    expect(page).to have_text(project1.pledging_ends_on)
   end
 
 end
