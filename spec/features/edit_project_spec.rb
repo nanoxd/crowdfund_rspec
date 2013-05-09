@@ -11,6 +11,13 @@ describe 'Editing a project' do
 
    expect(current_path).to eq(edit_project_path(project))
    expect(find_field('Name').value).to eq(project.name)
+
+   fill_in 'Name', with: "Updated Project Name"
+   click_button "Update Project"
+
+   expect(current_path).to eq(project_path(project))
+   expect(page).to have_text('Updated Project Name')
+
   end
 
 end

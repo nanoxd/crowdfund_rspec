@@ -14,11 +14,11 @@ describe "Viewing an individual project" do
   end
 
   it "shows the number of days remaining if the pledging end date is in the future" do
-    project = Project.create(project_attributes(pledging_ends_on: 1.days.from_now))
+    project = Project.create(project_attributes(pledging_ends_on: 1.day.from_now))
 
     visit project_url(project)
 
-    expect(page).to have_text("1 day remaining")
+    expect(page).to have_text("2 days remaining")
   end
 
   it "shows 'All done!' if the pledging end date is in the past" do
