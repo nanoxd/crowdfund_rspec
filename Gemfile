@@ -9,6 +9,9 @@ group :test, :development do
   gem 'rspec-rails'
 end
 
+group :development do
+  gem 'guard-rspec'
+end
 group :test do
   gem 'capybara'
 end
