@@ -1,5 +1,6 @@
 <article>
   <header>
+    <%= image_tag(@project.image_file_name) %>
     <h1><%= @project.name %></h1>
   </header>
   <h2>Description</h2>
@@ -18,6 +19,11 @@
   <p>
     <%= format_pledging_ends_on(@project) %> remaining
   </p>
+  <h3>Team Members</h3>
+  <p>
+    <%= @project.team_members %>
+  </p>
+
 </article>
 
 <%= link_to "All Projects", projects_path %> |

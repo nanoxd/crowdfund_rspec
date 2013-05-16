@@ -10,6 +10,8 @@ describe "Viewing an individual project" do
     expect(page).to have_text(project.description[0..10])
     expect(page).to have_text(project.website)
     expect(page).to have_text('$100.00')
+    expect(page).to have_text(project.team_members)
+    expect(page).to have_selector("img[src$='#{project.image_file_name}']")
 
   end
 
@@ -18,7 +20,7 @@ describe "Viewing an individual project" do
 
     visit project_url(project)
 
-    expect(page).to have_text("1 day remaining")
+    expect(page).to have_text("2 days remaining")
   end
 
   it "shows 'All done!' if the pledging end date is in the past" do
