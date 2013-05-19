@@ -20,7 +20,7 @@ describe "Viewing an individual project" do
 
     visit project_url(project)
 
-    expect(page).to have_text("2 days remaining")
+    expect(page).to have_text("1 day remaining")
   end
 
   it "shows 'All done!' if the pledging end date is in the past" do
